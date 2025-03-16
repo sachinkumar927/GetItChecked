@@ -1,28 +1,20 @@
-from flask import Flask, session
-from routes import main_routes
-from config import Config
-from DBConfig.db import init_db
+from flask import Flask
+from config.config import init_mysql
 from flask_session import Session
-from datetime import timedelta
+from routes import main_routes  # Import Blueprint
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.secret_key = "yesitisasupersecretkey"
 
 # Initialize MySQL
-init_db(app)
+mysql = init_mysql(app)
 
-#  Initialize Flask-Session
+# Flask-Session Configuration
+app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
-#  Make session permanent
-@app.before_request
-def make_session_permanent():
-    session.permanent = True
-    app.permanent_session_lifetime = timedelta(hours=24)
-
-#  Register the Blueprint
+# Register Blueprints
 app.register_blueprint(main_routes)
 
-#  Run the app
 if __name__ == "__main__":
     app.run(debug=True)
