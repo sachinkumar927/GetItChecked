@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block title %}Get It Checked{% endblock %}
+
+{% block content %}
+<div class="mx-4">
+    <!-- Breadcrumb Section -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page"><a></a></li> -->
+        </ol>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="content-section">
+        <div class="card p-4 mb-4 bg-light mt-3">
+            <h4>What is Get It Checked?</h4>
+            <p>
+                <strong>Get It Checked</strong> is an Assignment Plagiarism Detection tool designed for students and
+                teachers.
+                It ensures the originality of assignments by scanning and comparing text with previously uploaded
+                assignments.
+            </p>
+            <h5>How It Works:</h5>
+            <ul class="list-unstyled">
+                <li>🔹 <strong>Upload:</strong> Submit your assignment in PDF or TXT format.</li>
+                <li>🔹 <strong>Comparison:</strong> The system scans your document against previously submitted
+                    assignments.</li>
+                <li>🔹 <strong>Plagiarism Report:</strong> Get a similarity percentage and detailed sources where
+                    plagiarism is found.</li>
+                <li>🔹 <strong>Teacher Notification:</strong> If plagiarism is detected above a threshold (e.g.,
+                    50%), the respective teacher is notified automatically.</li>
+                <li>🔹 <strong>Marks Assignment:</strong> Based on the originality score, the system helps teachers in
+                    grading assignments.</li>
+            </ul>
+        </div>
+    </section>
+</div>
+{% endblock %}

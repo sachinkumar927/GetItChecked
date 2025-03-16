@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+
+{% block title %}Get It Checked{% endblock %}
+
+{% block content %}
+<div class="mx-4">
+    <!-- Breadcrumb Section -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard"> Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="/addAssignment"> Add Assignment</a></li>
+        </ol>
+    </nav>
+
+    <section class="content-section" id="addAssignment" style="zoom: 80%;">
+        <div class="container mt-3">
+            <!-- Add Assignment Form -->
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-header text-center bg-success text-white">
+                            <h4><i class="fas fa-plus"></i> Add Assignment</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="add-assignment-form" method="POST" enctype="multipart/form-data"
+                                action="/add-assignment">
+                                <!-- Faculty ID -->
+                                <div class="mb-3">
+                                    <label for="facultyId" class="form-label"><i class="fas fa-id-badge"></i> Faculty
+                                        ID</label>
+                                    <input type="text" class="form-control" id="facultyId" name="facultyId"
+                                        placeholder="Enter your Faculty ID" required>
+                                </div>
+                                <!-- Subject Code -->
+                                <div class="mb-3">
+                                    <label for="sub_code" class="form-label"><i class="fas fa-book"></i> Subject
+                                        Code</label>
+                                    <input type="text" class="form-control" id="sub_code" name="sub_code"
+                                        placeholder="Enter Subject Code" required>
+                                </div>
+                                <!-- Assignment File Upload -->
+                                <div class="mb-3">
+                                    <label for="file_data" class="form-label"><i class="fas fa-file-upload"></i> Upload
+                                        Assignment (PDF)</label>
+                                    <input type="file" class="form-control" id="file_data" name="file_data"
+                                        accept=".pdf" required>
+                                </div>
+                                <!-- Last Submission Date -->
+                                <div class="mb-3">
+                                    <label for="last_date" class="form-label"><i class="fas fa-calendar-alt"></i> Last
+                                        Submission Date</label>
+                                    <input type="date" class="form-control" id="last_date" name="last_date" required>
+                                </div>
+                                <!-- Submit Button -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success w-100">
+                                        <i class="fas fa-check-circle"></i> Add Assignment
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
